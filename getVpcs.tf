@@ -1,14 +1,34 @@
-data "aws_vpc" "default" {
-  default = true
+locals {
+	vpc_name = "myvpc"
 }
 
-data "aws_subnets" "all" {
+data "aws_vpc" "vpc" {
   filter {
-    name   = "vpc-id"
-    values = [data.aws_vpc.default.id]
+    name   = "tag:Name"
+    values = [local.vpc_name]
   }
 }
 
-output "first_subnet_id" {
-	value = sort(data.aws_subnets.all.ids)[0]
+data "aws_subnets" "public" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.vpc.id]
+  }
+
+  filter {
+    name   = "tag:Name"
+    values = ["${local.vpc_name}-public-*"]
+  }
+}
+
+data "aws_subnets" "private" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.vpc.id]
+  }
+
+  filter {
+    name   = "tag:Name"
+    values = ["${local.vpc_name}-private-*"]
+  }
 }
