@@ -19,7 +19,7 @@ data "aws_vpc" "selected" {
 
 data "aws_subnet_ids" "private" {
   vpc_id = "${data.aws_vpc.selected.id}"
-  tags {
+  tags = {
       Name	= "AM-dev-agency-management-vpc"
       }
 }
