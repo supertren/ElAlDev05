@@ -13,7 +13,7 @@ variable "ami" {}
 
 data "aws_vpc" "selected" {
   tags {
-    Name = "${data.aws_vpcs.vpc-id.ids}"
+    Name	= "AM-dev-agency-management-vpc"
   }
 }
 
