@@ -1,8 +1,8 @@
 locals {
-	vpc_name = "myvpc"
+	vpc_name = "public"
 }
 
-data "aws_vpc" "vpc" {
+data "aws_vpc" "public" {
   filter {
     name   = "tag:Name"
     values = [local.vpc_name]
