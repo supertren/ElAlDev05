@@ -13,7 +13,7 @@ variable "ami" {}
 
 data "aws_vpc" "selected" {
   tags {
-    Name = "${var.value}"
+    Name = "${data.aws_vpcs.vpc-id.ids}"
   }
 }
 
