@@ -1,7 +1,7 @@
 data "aws_vpcs" "foo" {
   tags = {
-    service = "production"
-  }
+    Name	= "AM-dev-agency-management-vpc"
+      }
 }
 
 output "foo" {
