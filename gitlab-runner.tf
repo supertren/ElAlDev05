@@ -1,6 +1,6 @@
 resource "aws_instance" "gitlab-runner" {
     ami = "ami-0574da719dca65348"
     instance_type = "t2.large"
-    vpc_id = "${var.project_name}-${var.environment}-${var.vpc_name}"
+    subnet_id = "${var.Private_subnet_1A}"
     tags = { Name = "${var.environment}" }  
 }
