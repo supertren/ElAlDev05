@@ -1,7 +1,9 @@
-locals {
-	vpc_name = "public"
+data "aws_vpcs" "public" {
+  tags = {
+    service = "production"
+  }
 }
 
-data "sbercloud_vpc" "vpc" {
-  name = var.vpc_name
+output "foo" {
+  value = data.aws_vpcs.foo.ids
 }
