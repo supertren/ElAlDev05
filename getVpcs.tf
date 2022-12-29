@@ -1,4 +1,4 @@
-data "aws_vpcs" "public" {
+data "aws_vpcs" "foo" {
   tags = {
     service = "production"
   }
