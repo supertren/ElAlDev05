@@ -9,7 +9,7 @@ output "foo" {
 }
 
 data "aws_subnet_ids" "AM-dev-agency-management-vpc" {
-  vpc_id = data.aws_vpcs.foo.ids
+  vpc_id = value
 }
 
 data "aws_subnet" "AM-dev-agency-management-vpc" {
