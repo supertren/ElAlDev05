@@ -1,9 +1,11 @@
-data "aws_vpcs" "foo" {
+data "aws_vpcs" "vpc-id" {
   tags = {
     Name	= "AM-dev-agency-management-vpc"
       }
 }
 
-output "foo" {
-  value = data.aws_vpcs.foo.ids
+output "vpc-id" {
+  value = data.aws_vpcs.vpc-id.ids
 }
+
+
