@@ -9,7 +9,7 @@ output "foo" {
 }
 
 data "aws_subnet_ids" "AM-dev-agency-management-vpc" {
-  vpc_id = value
+  vpc_id = ${value}
 }
 
 data "aws_subnet" "AM-dev-agency-management-vpc" {
