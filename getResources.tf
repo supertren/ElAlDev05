@@ -10,5 +10,5 @@ output "vpc-id" {
 
 
 data "aws_subnet" "selected" {
-  id = ${data.aws_vpcs.vpc-id.ids}
+  id = "${data.aws_vpcs.vpc-id.ids}"
 }
