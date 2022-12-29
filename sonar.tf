@@ -1,3 +1,7 @@
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+}
+
 module "ec2_instance" {
   source = "terraform-aws-modules/ec2-instance/aws"
   name = "sonar"
