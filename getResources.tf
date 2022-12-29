@@ -9,6 +9,6 @@ output "vpc-id" {
 }
 
 
-data "aws_subnet" "selected" {
-  id = "element(data.aws_vpcs.vpc-id.ids, 0)"
-}
+#data "aws_subnet" "selected" {
+#  id = "element(data.aws_vpcs.vpc-id.ids, 0)"
+#}
