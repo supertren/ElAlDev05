@@ -4,6 +4,10 @@ data "aws_vpcs" "foo" {
   }
 }
 
+output "foo" {
+  value = data.aws_vpcs.foo.ids
+}
+
 data "aws_subnet_ids" "AM-dev-agency-management-vpc" {
   vpc_id = data.aws_vpcs.foo.ids
 }
