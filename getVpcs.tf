@@ -2,9 +2,6 @@ locals {
 	vpc_name = "public"
 }
 
-data "aws_vpc" "public" {
-  filter {
-    name   = "tag:Name"
-    values = [local.vpc_name]
-  }
+data "sbercloud_vpc" "vpc" {
+  name = var.vpc_name
 }
