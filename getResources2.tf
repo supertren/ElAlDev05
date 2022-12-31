@@ -11,7 +11,7 @@ data "aws_subnets" "private" {
 
 resource "aws_instance" "app" {
   for_each      = toset(data.aws_subnets.private.ids)
-  ami           = var.ami
+  ami           = "ami-0574da719dca65348"
   instance_type = "t2.micro"
   subnet_id     = each.value
 }
