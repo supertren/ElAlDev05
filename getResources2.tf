@@ -3,7 +3,7 @@ data "aws_subnet" "vpc_live" {
   id       = each.key
 }
 
-{ for s in data.aws_subnet.vpc_live : s.availability_zone => s.id... }
+
 
 resource "aws_ec2_transit_gateway_vpc_attachment" "vpc_live" {
   subnet_ids         = [for subnet_ids in { for s in data.aws_subnet.ids : s.availability_zone => s.id... } : subnet_ids[0]]
