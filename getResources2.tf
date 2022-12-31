@@ -1,6 +1,6 @@
 data "aws_subnets" "private" {
   filter {
-    name   = "vpc-id"
+    name   = "agency-management-vpc"
     values = [var.vpc_id]
   }
 
