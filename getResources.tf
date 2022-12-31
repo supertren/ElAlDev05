@@ -11,3 +11,11 @@ data "aws_subnets" "selected" {
     values = ["agency-management-vpc"]
   }
 }
+
+output "my_id" {
+  value = data.aws_vpcs.selected.id
+}
+
+output "my_id2" {
+  value = data.aws_subnets.selected.id
+}
