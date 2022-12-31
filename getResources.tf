@@ -1,14 +1,13 @@
-data "aws_vpcs" "vpc-id" {
-  tags = {
-    Name	= "AM-dev-agency-management-vpc"
-      }
+data "aws_vpc" "selected" {
+  filter {
+    name = "tag:vpc_name"
+    values = ["vpc_name	agency-management-vpc"]
+  }
 }
 
-output "vpc-id" {
-  value = data.aws_vpcs.vpc-id.ids
+data "aws_subnet" "selected" {
+  filter {
+    name = "tag:vpc_name"
+    values = ["vpc_name	agency-management-vpc"]
+  }
 }
-
-
-#data "aws_subnet" "selected" {
-#  id = "element(data.aws_vpcs.vpc-id.ids, 0)"
-#}
