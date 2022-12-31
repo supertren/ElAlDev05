@@ -5,7 +5,7 @@ data "aws_subnets" "private" {
   }
 
   tags = {
-    Name  = "AM-dev-agency-management-vpc"
+    vpc_name  = "agency-management-vpc"
      }
 }
 
