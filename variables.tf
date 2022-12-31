@@ -14,3 +14,4 @@ variable "Private_subnet_3B" {}
 variable "Public_subnet_1" {}
 variable "Public_subnet_2" {}
 variable "Public_subnet_3" {}
+variable "vpc_id" {}
