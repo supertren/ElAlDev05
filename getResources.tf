@@ -22,7 +22,7 @@ output "my_id2" {
 
 data "aws_subnets" "example" {
   filter {
-    name = "Environment"
+    name = "tag:Environment"
     values = ["dev"]
   }
 }
