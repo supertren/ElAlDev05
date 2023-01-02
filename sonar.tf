@@ -1,5 +1,5 @@
 locals {
-  subnets = concat(${data.aws_subnets.example.ids})
+  subnets = concat("${data.aws_subnets.example.ids}")
 }
 
 resource "aws_instance" "sonar" {
