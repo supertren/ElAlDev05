@@ -20,12 +20,15 @@ output "my_id2" {
   value = data.aws_subnets.selected.id
 }
 
-data "aws_subnet" "example" {
-    filter {
-    name = "tag:vpc_name"
-    values = ["agency-management-vpc"]
+data "aws_subnets" "example" {
+  filter {
+    name   = "vpc-id"
+    values = [var.vpc_id]
   }
-  for_each = toset(data.aws_subnets.selected.ids)
+}
+
+data "aws_subnet" "example" {
+  for_each = toset(data.aws_subnets.example.ids)
   id       = each.value
 }
 
