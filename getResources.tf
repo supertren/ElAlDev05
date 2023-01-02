@@ -22,8 +22,8 @@ output "my_id2" {
 
 data "aws_subnets" "example" {
   filter {
-    name   = "vpc-id"
-    values = [var.vpc_id]
+    name = "tag:vpc_name"
+    values = ["agency-management-vpc"]
   }
 }
 
