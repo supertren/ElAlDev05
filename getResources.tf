@@ -32,6 +32,6 @@ data "aws_subnet" "example" {
   id       = each.value
 }
 
-output "subnet_cidr_blocks" {
-  value = [for s in data.aws_subnet.example : s.id]
+output "my_id3" {
+  value = data.aws_subnets.example.id
 }
