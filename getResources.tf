@@ -33,5 +33,5 @@ data "aws_subnet" "example" {
 }
 
 output "my_id3" {
-  value = data.aws_subnets.example.*
+  value = data.aws_subnets.example.ids
 }
