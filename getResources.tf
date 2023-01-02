@@ -19,3 +19,12 @@ output "my_id" {
 output "my_id2" {
   value = data.aws_subnets.selected.id
 }
+
+data "aws_subnet" "example" {
+  for_each = toset(data.aws_subnets.selected.ids)
+  id       = each.value
+}
+
+output "subnet_cidr_blocks" {
+  value = [for s in data.aws_subnet.example : s.cidr_block]
+}
