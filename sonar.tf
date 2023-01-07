@@ -1,6 +1,6 @@
-resource "aws_instance" "sonar" {
-    ami = "ami-0574da719dca65348"
-    subnet_id = "${element(data.aws_subnets.example.ids, count.index)}"
-    instance_type = "t2.micro"
-    tags = { Name = "sonar_${var.environment}" }  
-}
+# resource "aws_instance" "sonar" {
+#      ami = "ami-0574da719dca65348"
+#      instance_type = "t2.micro"
+#      subnet_id = flatten(data.aws_subnets.example.ids)[0]
+#      tags = { Name = "front_${var.environment}" }  
+#  }
